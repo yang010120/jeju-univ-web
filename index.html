@@ -1,1 +1,51 @@
-<Start!>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .intro {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>자기소개</h1>
+    <div class="intro" id="intro"></div>
+
+    <script>
+        // a. 템플릿 리터럴 방식으로 문자열 표기
+        const introPart1 = `안녕하세요!`;
+        const introPart2 = `저는 웹 개발을 공부하고 있습니다.`;
+        const introPart3 = `지금은 자바스크립트를 배우고 있어요!`;
+
+        // b. setInterval 사용
+        function intro1() {
+            document.getElementById("intro").innerHTML = `${introPart1}`;
+        }
+
+        function intro2() {
+            document.getElementById("intro").innerHTML = `${introPart2}`;
+        }
+
+        function intro3() {
+            document.getElementById("intro").innerHTML = `${introPart3}`;
+        }
+
+        // c. 3초마다 다른 함수가 업데이트되는 자기소개글 만들기
+        let currentIntro = 0;
+        const intros = [intro1, intro2, intro3];
+
+        setInterval(() => {
+            intros[currentIntro]();
+            currentIntro = (currentIntro + 1) % intros.length;
+        }, 3000); // 3초마다 업데이트
+    </script>
+</body>
+</html>
