@@ -1,0 +1,178 @@
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+body {
+    font-family: helvetica, arial, sans-serif;
+}
+
+#left-container {
+    background-color: #eee;
+    width: 15%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    height: auto;
+    padding: 10px;
+}
+   
+#right-container {
+    background-color: #eee;
+    width: 15%;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    height: auto;
+    padding: 10px;
+}
+
+.container {
+    background-color: #eee;
+    width: 15%;
+    top: 0px;
+    position: absolute;
+    height: auto;
+    padding: 10px;
+}
+
+.plant-holder {
+    width: 90%; 
+    height: auto; 
+    margin: 10px auto; 
+    padding: 10px;
+    border: 2px solid black;
+}
+.plant {
+    max-width: 100%;
+    max-height: auto;
+    z-index: 2;
+}
+
+.jar-walls {
+    height: 80%;
+    width: 60%;
+    background: #d1e1df;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 0.5%;
+    left: 20%;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.jar-glossy-long {
+    height: 15%;
+    width: 2.5%;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    opacity: 1;
+    z-index: 0;
+}
+
+.jar-glossy-short {
+    height: 2.5%;
+    width: 2.5%;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 32.5%;
+    left: 5%;
+    opacity: 1;
+    z-index: 0;
+}
+
+.design-insect {
+    width: 20%;
+    height: 20%;
+    background: url('./images/insect.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    z-index: -1;
+}
+
+.design-flower {
+    width: 30%;
+    height: 60%;
+    background: url('./images/flower.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    bottom: -5%;
+    left: 40%;
+    z-index: 0;
+}
+
+.design-bird {
+    width: 30%;
+    height: 30%;
+    background: url('./images/bird.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: -1;  
+}
+
+.design-grass {
+    width: 60%;
+    height: 20%;
+    background: url('./images/grass.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    bottom: 6%;
+    left: 20%;
+    z-index: -1;
+}
+
+.design-rock {
+    width: 40%;
+    height: 40%;
+    background: url('./images/rock.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    z-index: -1;
+}
+
+.jar-top {
+    width: 50%;
+    height: 5%;
+    background: #d1e1df;
+    position: absolute;
+    bottom: 80.5%;
+    left: 25%;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.jar-bottom {
+    width: 50%;
+    height: 1%;
+    background: #d1e1df;
+    position: absolute;
+    bottom: 0%;
+    left: 25%;
+    opacity: 0.7;
+}
+
+.dirt {
+    width: 60%;
+    height: 5%;
+    background: #3a241d;
+    position: absolute;
+    border-radius: 0 0 1rem 1rem;
+    bottom: 1%;
+    left: 20%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+
+
+
