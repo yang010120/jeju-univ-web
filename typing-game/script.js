@@ -9,9 +9,11 @@ const quotes = [
 ];
 
 let words = [];
-let wordIndex = 0;
+let wordIndex = 0; 
 let startTime = Date.now();
 let isGameActive = false;
+let bestScore = localStorage.getItem('bestScore') || 100000; // 저장된 최고 점수를 불러온다.
+// 저장된 점수가 없을 때 기본값은 100초로 설정.
 
 const quoteElement = document.getElementById('quote');
 const messageElement = document.getElementById('message');
@@ -46,11 +48,19 @@ function handleInput() {
     if (typedValue === currentWord && wordIndex === words.length - 1) {
         const elapsedTime = new Date().getTime() - startTime;
         const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
-        messageElement.innerText = message;
+        if(elapsedTime < bestScore) { // 최고 점수 갱신시 localStorage에 저장 
+            bestScore = elapsedTime;
+            localStorage.setItem('bestScore', bestScore); // setItem 함수 사용해 bestScore라는 키로 데이터 저장.
+            messageElement.innerText = `New best score: ${bestScore / 1000} seconds!`;
+        }
+        else {
+            messageElement.innerText = message;
+        }
         isGameActive = false;
         typedValueElement.removeEventListener('input', handleInput);
         typedValueElement.disabled = true;
-        startButton.disabled = false; // 게임 종료 시 Start 버튼 활성화
+        startButton.disabled = false; 
+        showModal(elapsedTime);
     } 
     else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
         typedValueElement.value = '';
@@ -68,7 +78,34 @@ function handleInput() {
     }
 }
 
-startButton.addEventListener('click', () => {
-    startGame();
-    typedValueElement.addEventListener('input', handleInput);
-});
+function showModal(time) { // 모달을 열고 기록을 업데이트 함
+    document.getElementById('elapsed-time').textContent = (time / 1000).toFixed(2);
+    document.getElementById('best-time').textContent = (bestScore / 1000).toFixed(2);
+    document.getElementById('modal').style.display = 'block'; 
+}
+
+document.querySelector('.close-btn').onclick = function() { // 클릭 시 모달이 닫힘.
+    document.getElementById('modal').style.display = 'none';
+};
+
+document.getElementById('restart').onclick = function() {
+    document.getElementById('modal').style.display = 'none';
+    main();
+};
+
+function main() {
+    startButton.addEventListener('click', () => {
+        startGame();
+        typedValueElement.addEventListener('input', handleInput);
+
+        // 게임 진행 중 사용자가 입력할 때마다 input 필드의 배경색을 변경해 시각적 효과를 준다.
+        typedValueElement.addEventListener('input', () => { 
+            typedValueElement.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            // 랜덤한 색상 생성
+            typedValueElement.style.transition = "background-color 0.5s ease";
+            // 배경색이 부드럽게 변경되도록 효과를 추가한다.
+        });
+    });
+}
+
+main();

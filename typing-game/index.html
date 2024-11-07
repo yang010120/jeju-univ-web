@@ -12,6 +12,18 @@
     <div>
         <input type="text" aria-label="current word" id="typed-value" />
         <button type="button" id="start">Start</button>
+    </div> 
+    <!-- 게임 완료 시 결과를 표시하는 모달창 -->
+    <div id="modal" class="modal"> 
+        <div class="modal-content">
+            <!-- 모달창 닫기 버튼 -->
+            <span class="close-btn">&times;</span>
+            <h2>게임 완료!</h2>
+            <!-- 모달창에 게임 시간과 최고 기록 표시 -->
+            <p>당신의 기록은 <span id="elapsed-time"></span>초입니다.</p>
+            <p>당신의 최고 기록은 <span id="best-time"></span>초입니다.</p>
+            <button id="restart">다시 시작하기</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
