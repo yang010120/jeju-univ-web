@@ -1,51 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self Introduction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .intro {
-            font-size: 24px;
-        }
-    </style>
-</head>
-<body>
-    <h1>자기소개</h1>
-    <div class="intro" id="intro"></div>
-
-    <script>
-        // a. 템플릿 리터럴 방식으로 문자열 표기
-        const introPart1 = `안녕하세요!`;
-        const introPart2 = `저는 웹 개발을 공부하고 있습니다.`;
-        const introPart3 = `지금은 자바스크립트를 배우고 있어요!`;
-
-        // b. setInterval 사용
-        function intro1() {
-            document.getElementById("intro").innerHTML = `${introPart1}`;
-        }
-
-        function intro2() {
-            document.getElementById("intro").innerHTML = `${introPart2}`;
-        }
-
-        function intro3() {
-            document.getElementById("intro").innerHTML = `${introPart3}`;
-        }
-
-        // c. 3초마다 다른 함수가 업데이트되는 자기소개글 만들기
-        let currentIntro = 0;
-        const intros = [intro1, intro2, intro3];
-
-        setInterval(() => {
-            intros[currentIntro]();
-            currentIntro = (currentIntro + 1) % intros.length;
-        }, 3000); // 3초마다 업데이트
-    </script>
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>My Carbon Trigger</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body class="container">
+        <img alt="plants and people" src="images/plants-people.png" />
+        <div>
+            <h1>Welcome to Your Personal Carbon Trigger!</h1>
+        </div>
+        <form class="form-data" autocomplete="on">
+            <div>
+                <h2>New? Add your Information</h2>
+            </div>
+            <div>
+                <label for="region1">Region Name 1</label>
+                <input type="text" id="region1" class="region-name" required />
+            </div>
+            <div>
+                <label for="region2">Region Name 2</label>
+                <input type="text" id="region2" class="region-name" required />
+            </div>
+            <div>
+                <label for="region3">Region Name 3</label>
+                <input type="text" id="region3" class="region-name" required />
+            </div>
+            <div>
+                <label for="api">Your API Key from tmrow</label>
+                <input type="text" id="api" required class="api-key" />
+            </div>
+            <button class="search-btn">Submit</button>
+        </form>
+        <div class="result">
+            <div class="loading">loading...</div>
+            <div class="errors"></div>
+            <div class="data"></div>
+            <div id="result1" class="result-container">
+                <h3>Region 1 Results</h3>
+                <p><strong>Region:</strong> <span id="my-region1"></span></p>
+                <p><strong>Carbon Usage:</strong> <span id="carbon-usage1"></span></p>
+                <p><strong>Fossil Fuel Percentage:</strong> <span id="fossil-fuel1"></span></p>
+            </div>
+            <div id="result2" class="result-container">
+                <h3>Region 2 Results</h3>
+                <p><strong>Region:</strong> <span id="my-region2"></span></p>
+                <p><strong>Carbon Usage:</strong> <span id="carbon-usage2"></span></p>
+                <p><strong>Fossil Fuel Percentage:</strong> <span id="fossil-fuel2"></span></p>
+            </div>
+            <div id="result3" class="result-container">
+                <h3>Region 3 Results</h3>
+                <p><strong>Region:</strong> <span id="my-region3"></span></p>
+                <p><strong>Carbon Usage:</strong> <span id="carbon-usage3"></span></p>
+                <p><strong>Fossil Fuel Percentage:</strong> <span id="fossil-fuel3"></span></p>
+            </div>
+            <button class="clear-btn">Change region</button>       
+        </div>
+        <div class="quiz-container" style="display: none;">
+            <h2>Quiz Timse!</h2>
+            <p class="quiz-question"></p>
+            <div class="quiz-options"></div>
+            <p class="errors"></p>
+        </div>        
+        <script src="main.js"></script>
+    </body>
+    </html>
