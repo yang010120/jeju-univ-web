@@ -1,0 +1,131 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockqu
+ote,th,td,input,select,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+input,select,textarea,button{vertical-align:middle;font-size:100%}
+button{border:0 none;background-color:transparent;cursor:pointer}
+table{border-collapse:collapse;border-spacing:0}
+body{-webkit-text-size-adjust:none} /* 뷰포트 변환시 폰트크기 자동확대 방지. */
+input[type='text'],input[type='password'],input[type='submit'],input[type='search'],input[type='tel'],input[type='email'],html 
+input[type='button'],input[type='reset']{-webkit-appearance:none;border-radius:0}
+input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
+body{background:#fff}
+body,th,td,input,select,textarea,button{font-size:14px;line-height:1.5;font-family:'Malgun Gothic','맑은 고딕',sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+a{color:#333;text-decoration:none}
+a:active, a:hover{text-decoration:none}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+/* 전체 페이지 설정 */
+.container {
+    width: 350px;
+    max-width: 100%; /* 넓은 화면 적용 */
+    height: auto;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 auto; /* 좌우 중앙 정렬 */
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+/* 이미지 크기 조정 */
+img {
+    width: 100%;
+    max-width: 320px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 18px;
+    text-align: center;
+    display: block;
+    width: 100%; 
+    max-width: 300px;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.form-data label {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+    display: block;
+    text-align: center;
+}
+
+.form-data input {
+    width: 70%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    box-sizing: border-box;
+}
+
+/* 버튼 스타일 */
+.search-btn {
+    width: 28%;
+    padding:    10px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+.quiz-container {
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    display: block;
+}
+
+.quiz-options button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quiz-options button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
