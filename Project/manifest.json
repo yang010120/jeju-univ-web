@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Random Exercise Info",
+    "version": "1.0",
+    "description": "Provides random exercise information and related images.",
+    "host_permissions": ["https://api.pexels.com/*"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "assets/icon.png",
+        "48": "assets/icon.png",
+        "128": "assets/icon.png"
+      }
+    },
+    "permissions": [
+      "activeTab"
+    ]
+    
+  }
+  
